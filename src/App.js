@@ -1,25 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { Route, Routes } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
+
+import Login from './components/login';
+import Register from './components/register';
+import SetData from './components/employeData';
+import Employees from './components/employees';
+import Home from './components/home'
+import './login.css';
+import AddUser from './components/addNewEmployee';
+import DeleteEmployee from './components/deleteTest'
+import TasksData from './components/TasksData';
+import TasksTable from './components/tasksTable';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+            <Routes>
+                 <Route exact path='/' element={<Login/>} />
+                 <Route exact path='/register' element={<Register/>} />
+                 <Route exact path='/setData' element={<SetData/>} />
+                 <Route exact path='/employees' element={<Employees/>} />
+                 <Route exact path='/home' element={<Home/>} />
+                 <Route exact path='/addUser' element={<AddUser/>} />
+                 <Route exact path='/deleteEmployee' element={<DeleteEmployee/>} />
+                 <Route exact path='/TasksData' element={<TasksData/>} />
+                 <Route exact path='/tasksTable' element={<TasksTable/>} />
+
+
+
+             </Routes>
+       </BrowserRouter>
   );
 }
 
 export default App;
+
+
+
